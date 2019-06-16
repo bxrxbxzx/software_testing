@@ -17,17 +17,14 @@ public class NewContactTests {
     public void setUp() {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wd.get("http://localhost/addressbook/");
+        login();
+        addNew();
     }
 
     @Test
     public void testNewContact() {
-        wd.get("http://localhost/addressbook/");
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys("admin");
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys("secret");
-        wd.findElement(By.xpath("//input[@value='Login']")).click();
-        wd.findElement(By.linkText("add new")).click();
+
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys("Babushka");
@@ -61,6 +58,18 @@ public class NewContactTests {
         wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
         wd.findElement(By.linkText("Logout")).click();
 
+    }
+
+    private void addNew() {
+        wd.findElement(By.linkText("add new")).click();
+    }
+
+    private void login() {
+        wd.findElement(By.name("user")).clear();
+        wd.findElement(By.name("user")).sendKeys("admin");
+        wd.findElement(By.name("pass")).clear();
+        wd.findElement(By.name("pass")).sendKeys("secret");
+        wd.findElement(By.xpath("//input[@value='Login']")).click();
     }
 
     @AfterMethod(alwaysRun = true)
