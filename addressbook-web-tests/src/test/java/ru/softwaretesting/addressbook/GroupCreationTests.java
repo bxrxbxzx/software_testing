@@ -10,7 +10,7 @@ public class GroupCreationTests {
     private WebDriver wd;
 
     @BeforeMethod(alwaysRun = true)
-    public void setUp() throws Exception {
+    public void setUp() {
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
@@ -34,6 +34,7 @@ public class GroupCreationTests {
         submitGroupCreation();
         gotoGroupPage();
         logOut();
+
     }
 
     private void logOut() {
