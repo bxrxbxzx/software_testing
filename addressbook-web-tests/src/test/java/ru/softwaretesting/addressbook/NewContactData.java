@@ -1,6 +1,6 @@
 package ru.softwaretesting.addressbook;
 
-public class ContactData {
+public class NewContactData {
     private final String name;
     private final String patronimic;
     private final String surname;
@@ -12,7 +12,7 @@ public class ContactData {
     private final String month;
     private final String year;
 
-    public ContactData(String name, String patronimic, String surname, String AKA, String address, String mobile, String mail, String day, String month, String year) {
+    public NewContactData(String name, String patronimic, String surname, String AKA, String address, String mobile, String mail, String day, String month, String year) {
         this.name = name;
         this.patronimic = patronimic;
         this.surname = surname;
