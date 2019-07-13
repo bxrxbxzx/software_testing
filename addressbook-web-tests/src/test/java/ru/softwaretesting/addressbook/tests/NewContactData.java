@@ -1,4 +1,4 @@
-package ru.softwaretesting.addressbook;
+package ru.softwaretesting.addressbook.tests;
 
 public class NewContactData {
     private final String name;
